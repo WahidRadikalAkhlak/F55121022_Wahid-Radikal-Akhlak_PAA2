@@ -1,0 +1,28 @@
+import time
+
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        swapped = False
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+                swapped = True
+        if not swapped:
+            break
+
+# Data yang sama untuk kedua versi
+data = [64, 34, 25, 12, 22, 11, 90]
+
+# Menggunakan timeit untuk mengukur waktu eksekusi
+start_time = time.time()
+bubble_sort(data)
+end_time = time.time()
+
+# Menampilkan hasil sorting
+print("Hasil sorting:")
+print(data)
+
+# Menampilkan waktu eksekusi
+execution_time = end_time - start_time
+print("Waktu eksekusi: {} detik".format(execution_time))
